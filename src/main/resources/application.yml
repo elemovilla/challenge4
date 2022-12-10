@@ -1,0 +1,36 @@
+api:
+  version: 1.0.0
+  title: challenge4 API
+  basePackage: com.enyoi.challenge4
+  description: challenge4
+  terms: https://
+
+  #Server configurations
+server:
+  servlet:
+    context-path: /challenge4
+    port: ${PORT:8080}
+    error:
+    include-message: always
+    include-binding-errors: always
+
+#Swagger-ui custom path
+springdoc:
+  api-docs:
+    path: /api-docs
+
+#Spring configs
+spring:
+  jpa:
+    defer-datasource-initialization: true
+    hibernate.ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.MySQL5Dialect
+  datasource:
+    url: jdbc:mysql://localhost:3306/bdchallenge4
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
